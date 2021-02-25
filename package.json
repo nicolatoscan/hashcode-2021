@@ -1,0 +1,22 @@
+{
+  "name": "hashcode-2021",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "npm run transpile && npm run start",
+    "start": "node dist/index",
+    "transpile": "tsc",
+    "postinstall": "npm run transpile"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicolatoscan/hashcode-2021.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nicolatoscan/hashcode-2021/issues"
+  },
+  "homepage": "https://github.com/nicolatoscan/hashcode-2021#readme"
+}
