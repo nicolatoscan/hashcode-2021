@@ -4,7 +4,10 @@ import random
 import math
 from collections import Counter
 
-mm = 0
+
+seed = random.random()
+print('seed', seed)
+random.seed(seed)
 
 inputs = ['a', 'b', 'c', 'd', 'e', 'f']
 if len(sys.argv) <= 1:
@@ -62,48 +65,20 @@ for file in selected_inputs:
                 f.write(f"1\n")
                 f.write(f"{intersezioniInput[i][0]} 1\n")
                 continue
+
             
-            # numero macchine nomestrada
-            #pesi = [[roadCounter[s], s] for s in stradeUsate]
-            pesi = [[roadCounter[s] / streets[streenName][2], s] for s in stradeUsate]
+            pesi = [[roadCounter[s], s] for s in stradeUsate]
             pesi.sort()
-            pesi.reverse()
+            #pesi.reverse()
 
-            tot = sum([p[0] for p in pesi])
-
-
-            # if i == 499:
-            #     #print('p', pesi)
-            #     print('tp', len(pesi))
-            #     pesi2 = [x for x in pesi if x[0] / tot > 0.002]
-            #     #print('p2', pesi2)
-            #     print('tp2', len(pesi2))
-            #     if len(pesi2) > 0:
-            #         pesi = pesi2
-
-
+            
+            #pesi = [x for x in pesi if ]
+            
             f.write(f"{i}\n")
-            f.write(f"{len(pesi)}\n")
+            f.write(f"{len(stradeUsate)}\n")
             #print(len(pippo))
             ii = len(pesi)
-            if ii < 0:
-                print("OH HO")
-        
-            # #SPECIALE E
-            # if len(pesi) == 1:
-            #     f.write(f"{pesi[0][1]} {duration}\n")
-            # elif len(pesi) == 2:
-            #     # print(streets[pesi[1][1]][0])
-            #     f.write(f"{pesi[0][1]} 2\n")
-            #     f.write(f"{pesi[1][1]} 1\n")
-            # else:
-            #     for s in pesi:
-            #         f.write(f"{s[1]} {s[0]}\n")
-
             for s in pesi:
-
-                sec = roadCounter[s[1]] / random.choice([23, 22, 23, 24, 50, 22, 24, 23, 23,32, 12])
-                print(sec)
-                f.write(f"{s[1]} {max(1, math.floor(sec))}\n")
+                f.write(f"{s[1]} {ii}\n")
                 #print(f"{s} 2")
                 ii -= 1
